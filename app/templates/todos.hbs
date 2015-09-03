@@ -4,10 +4,10 @@
 <section id="main">
     <ul id="todo-list">
       {{#each todo in model}}
-          {{todo-item todo=todo}}
+          {{todo-item action="acceptChanges" todo=todo}}
       {{/each}}
   </ul>
-  <input type="checkbox" id="toggle-all">
+  <input type="checkbox" id="toggle-all" {{action "toggleAll" on="click"}}>
 </section>
 
 <footer id="footer">

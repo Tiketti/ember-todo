@@ -17,6 +17,13 @@ export default Ember.Route.extend({
 
             // Save the new model
             todo.save();
+        },
+        toggleAll: function() {
+            this.store.all('todo').forEach(function (item){
+                item.set('isCompleted', !item.get('isCompleted'));
+                item.save();
+            });
+
         }
     }
 });
